@@ -4,9 +4,7 @@
  * Author: Thanh Tran - trongthanh@gmail.com
  */
 var Fish = function () {
-
 	THREE.PlaneGeometry.call( this, 30, 15, 2, 1 );
-
 };
 
 Fish.prototype = new THREE.PlaneGeometry();
@@ -15,9 +13,8 @@ Fish.prototype.constructor = Fish;
 var FishMesh = function () {
   THREE.Mesh.call(this,
     new Fish(),
-    new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'img/fish-texture.png' ), overdraw: true } )
+    new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'img/vectorlele2.png' ), overdraw: true } )
   );
-
   this.phase = Math.floor( Math.random() * 62.83 );
 };
 
