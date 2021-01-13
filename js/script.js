@@ -108,16 +108,16 @@ BoidScene.prototype = {
     vector.multiplyScalar(0.87);
 
     //debug
-    //this.cube.position = vector.clone();
+    // this.cube.position = vector.clone();
     
-    //trace(3, 'offset: ' + offset.x + 'x' + offset.y + ' - vector: ' + vector.x + 'x' + vector.y);
+    // trace(3, 'offset: ' + offset.x + 'x' + offset.y + ' - vector: ' + vector.x + 'x' + vector.y);
 
     for ( var i = 0, il = boids.length; i < il; i++ ) {
       boid = boids[ i ];
       vector.z = boid.position.z;
       boid.repulse( vector );
     }
-
+    console.log('x:' + e.x + '\ny: ' + e.y);
   },
 
   windowResizeHandler: function (e) {
