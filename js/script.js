@@ -63,11 +63,15 @@ BoidScene.prototype = {
     function onDocumentKeyDown(event) {
         var keyCode = event.which;
         if (keyCode == 87) {
-          camera.fov *= 0.1;
+          camera.fov *= 0.9;
           camera.updateProjectionMatrix();
         } else if (keyCode == 83) {
-          camera.fov /= 0.1;
+          camera.fov /= 0.9;
           camera.updateProjectionMatrix();
+        } else if(keyCode == 65) {
+          camera.position.x -= 10;
+        } else if(keyCode == 68) {
+          camera.position.x += 10;
         }
     };
     
