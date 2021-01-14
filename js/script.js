@@ -59,7 +59,20 @@ BoidScene.prototype = {
     renderer.setSize( viewWidth, viewHeight );
 
     document.addEventListener( 'mousemove', this.documentMouseMoveHandler.bind(this), false );
+    document.addEventListener("keydown", onDocumentKeyDown, false);
+    function onDocumentKeyDown(event) {
+        var keyCode = event.which;
+        if (keyCode == 87) {
+          camera.fov *= 0.1;
+          camera.updateProjectionMatrix();
+        } else if (keyCode == 83) {
+          camera.fov /= 0.1;
+          camera.updateProjectionMatrix();
+        }
+    };
+    
     window.addEventListener('resize', this.windowResizeHandler.bind(this),false);
+
     /* debug 
      var materials = [];
      for ( var j = 0; j < 6; j ++ ) {
@@ -117,7 +130,7 @@ BoidScene.prototype = {
       vector.z = boid.position.z;
       boid.repulse( vector );
     }
-    console.log('x:' + e.x + '\ny: ' + e.y);
+    // console.log('x:' + e.x + '\ny: ' + e.y);
   },
 
   windowResizeHandler: function (e) {
@@ -178,6 +191,9 @@ var Main = function (win) {
   this.win = win;
   this.doc = doc;
   this.boidScene = boidScene;
+
+
+
 };
 
 //this is where it all begin:
