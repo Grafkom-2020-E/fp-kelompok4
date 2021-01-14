@@ -72,7 +72,14 @@ BoidScene.prototype = {
           camera.position.x -= 10;
         } else if(keyCode == 68) {
           camera.position.x += 10;
+        } else if(keyCode == 77) {
+          var audio = new Audio('audio/audio1.mp3');
+          audio.play();
         }
+        // else if(keyCode == 80) {
+        //   audio.paused = true;
+        // }
+        
     };
     
     window.addEventListener('resize', this.windowResizeHandler.bind(this),false);
