@@ -76,10 +76,6 @@ BoidScene.prototype = {
           var audio = new Audio('audio/audio1.mp3');
           audio.play();
         }
-        // else if(keyCode == 80) {
-        //   audio.paused = true;
-        // }
-        
     };
     
     window.addEventListener('resize', this.windowResizeHandler.bind(this),false);
@@ -105,7 +101,6 @@ BoidScene.prototype = {
       
       that.render();
       stats.update();
-
     };
 
     //members:
@@ -185,7 +180,6 @@ var Main = function (win) {
     return;
   }
 
-
   var stats = new Stats();
   stats.domElement.style.position = 'absolute';
   stats.domElement.style.left = '0px';
@@ -202,9 +196,6 @@ var Main = function (win) {
   this.win = win;
   this.doc = doc;
   this.boidScene = boidScene;
-
-
-
 };
 
 //this is where it all begin:
