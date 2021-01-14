@@ -74,9 +74,7 @@ var Boid = function(maxSpeed, maxSteerForce) {
       _acceleration.addSelf( vector );
 
     }/* else {
-
       this.checkBounds();
-
     }
     */
 
@@ -230,12 +228,9 @@ var Boid = function(maxSpeed, maxSteerForce) {
       distance = boid.position.distanceTo( this.position );
 
       if ( distance > 0 && distance <= _neighborhoodRadius ) {
-
         posSum.addSelf( boid.position );
         count++;
-
       }
-
     }
 
     if ( count > 0 ) {
